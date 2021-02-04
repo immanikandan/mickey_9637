@@ -13,7 +13,4 @@ export class GetallscreenService {
         private http: HttpClient,
     ) { }
 
-    GpGetAllValues(): Observable<any> {
-        return this.http.get(this.sharedService.DESKTOP_API + '/who');
-    }
 }

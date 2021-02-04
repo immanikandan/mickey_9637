@@ -26,15 +26,6 @@ export class GetallscreenComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.GpGetAllValues();
-    }
-    GpGetAllValues() {
-        this.getallscreenService.GpGetAllValues().subscribe(data => {
-            this.rowData = data
-        },
-        error => {
-            console.log('Error', error);
-        });
     }
     onGridReady(params) {
         this.gridApi = params.api;
