@@ -69,9 +69,19 @@ services:
       - camundaservice
       - authproxy
       - securitymanager
+      - mani
 
 
 
+  mani: 
+    build: ../../../application/services/custom_services/mani
+    image: mani-9637
+    container_name: mani-9637
+    ports: 
+      - 8005:8005
+    env_file: .env
+    depends_on:
+      - mongo
 
 
 volumes:

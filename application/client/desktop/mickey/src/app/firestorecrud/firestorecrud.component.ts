@@ -20,4 +20,14 @@ export class FirestorecrudComponent implements OnInit {
 
     ngOnInit() {
     }
+    GpCreate() {
+        this.firestorecrudService.GpCreate(this.who).subscribe(data => {
+            this.who.titleID = ''
+ 	 	this.who.title = ''
+ 	 	this.who.description = ''
+        },
+        error => {
+            console.log('Error', error);
+        });
+    }
 }

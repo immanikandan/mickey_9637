@@ -8,7 +8,7 @@ import { GetallscreenService } from './getallscreen.service';
 })
 
 export class GetallscreenComponent implements OnInit {
-    columnDefs: any = [{ headerName: 'titleID', field: 'titleID'  },{ headerName: 'title', field: 'title'  },{ headerName: 'description', field: 'description'  },];
+    columnDefs: any = [{ headerName: 'title', field: 'title'  },{ headerName: 'description', field: 'description'  },{ headerName: 'titleID', field: 'titleID'  },];
     public who = {
         titleID: '',
         title: '',
@@ -26,6 +26,15 @@ export class GetallscreenComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.GpGetAllValues();
+    }
+    GpGetAllValues() {
+        this.getallscreenService.GpGetAllValues().subscribe(data => {
+            this.rowData = data
+        },
+        error => {
+            console.log('Error', error);
+        });
     }
     onGridReady(params) {
         this.gridApi = params.api;

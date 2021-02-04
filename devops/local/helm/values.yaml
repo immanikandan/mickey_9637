@@ -51,6 +51,11 @@ service:
     type: NodePort
     port: 8080
     targetPort: 8080
+  mani: 
+    name: mani
+    type: NodePort
+    port: 8005
+    targetPort: 8005
 
 
 deployment:
@@ -77,6 +82,9 @@ deployment:
   desktop:
      name: desktop
      image: geppettotest/mickey-desktop:1.0
+  mani: 
+    name: mani
+    image: geppettotest/mickey-mani:1.0
 
   camundapod:
      name: camundapod

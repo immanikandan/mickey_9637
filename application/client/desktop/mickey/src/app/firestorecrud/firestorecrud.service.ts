@@ -13,4 +13,7 @@ export class FirestorecrudService {
         private http: HttpClient,
     ) { }
 
+    GpCreate(who): Observable<any> {
+        return this.http.post(this.sharedService.DESKTOP_API + '/who', who);
+    }
 }
